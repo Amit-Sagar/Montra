@@ -1,12 +1,10 @@
 import './App.css';
-import FramerDashboard from './components/FramerDashboard';
-import Sidebar from './components/Sidebar';
+import Homepage from './pages/Homepage';
 
 function App() {
   return (
     <div className="App">
-      <Sidebar/>
-     <FramerDashboard/>
+      <Homepage />
     </div>
   );
 }

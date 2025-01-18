@@ -1,8 +1,7 @@
 import React, { useState, useRef } from "react";
-import FramerTimeline from "./FramerTimeline"; // Assuming this is your FramerTimeline component
-import user_img from "../images/user_img.png";
+import FramerTimeline from "../FramerTimeline"; // Assuming this is your FramerTimeline component
 
-const VideoPlayer = () => {
+const VideoSection = () => {
   const [videoUrl, setVideoUrl] = useState(null); // Store the video URL
   const [progress, setProgress] = useState(0); // Store the playback progress
   const [fileName, setFileName] = useState(""); // Store the file name
@@ -61,7 +60,7 @@ const VideoPlayer = () => {
   };
 
   return (
-    <div style={{ padding: "35px 80px", background:"rgb(0 88 255 / 91%)" }}>
+    <div style={{ padding: "35px 80px", background: "rgb(0 88 255 / 91%)" }}>
       {/* <h1>Interactive Video Player</h1> */}
 
       {/* Upload Video Input */}
@@ -75,8 +74,6 @@ const VideoPlayer = () => {
 
       {/* File Name Display */}
       {fileName && <p>Uploaded File: {fileName}</p>}
-
-      
 
       {/* Video Container */}
       <div
@@ -114,21 +111,26 @@ const VideoPlayer = () => {
               justifyContent: "center",
               alignItems: "center",
               height: "100%",
-              backgroundColor:"white"
+              backgroundColor: "white",
             }}
           >
             <p>Upload a video to start</p>
           </div>
         )}
       </div>
-      <img src={user_img} style={{    "width": "100px",
-    "height": "100px",
-    "border-radius": "25px",
-    "border": "11px solid #cbcbcb",
-   "border-collapse": "collapse",
-    "position": "absolute",
-    "top": "320px",
-    "left": "237px"}}/>
+      {/* <img
+        src={user_img}
+        style={{
+          width: "100px",
+          height: "100px",
+          "border-radius": "25px",
+          border: "11px solid #cbcbcb",
+          "border-collapse": "collapse",
+          position: "absolute",
+          top: "320px",
+          left: "237px",
+        }}
+      /> */}
 
       {/* Framer Timeline below the video */}
       {videoUrl && (
@@ -164,4 +166,4 @@ const VideoPlayer = () => {
   );
 };
 
-export default VideoPlayer;
+export default VideoSection;
