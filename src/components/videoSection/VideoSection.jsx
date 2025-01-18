@@ -86,6 +86,7 @@ const VideoSection = () => {
           marginBottom: "20px",
           position: "relative",
           overflow: "hidden", // Hide any overflow
+          marginLeft:"150px"
         }}
       >
         {videoUrl ? (
@@ -124,7 +125,7 @@ const VideoSection = () => {
 {/* Controls (outside video div) */}
 <div style={{ marginBottom: "20px",display:"flex" }}>
         
-<div style={{width:"65%",display:"flex",justifyContent:"end"}}>
+<div style={{width:"49%",display:"flex",justifyContent:"end"}}>
         {/* Skip Backward by 10 Seconds */}
         <button onClick={skipBackward} style={{ marginRight: "10px",border:"none", background:"white" }}>
         <i class="fa fa-step-backward" aria-hidden="true"></i>
@@ -139,7 +140,7 @@ const VideoSection = () => {
         <i class="fa fa-step-forward" aria-hidden="true"></i>
         </button>
         </div>
-<div>
+<div style={{marginLeft:"205px"}}>
         {/* Delete Video Button */}
         <button onClick={deleteVideo} style={{ marginRight: "10px",border:"none", background:"white","marginRight": "10px",
     border: "none",
