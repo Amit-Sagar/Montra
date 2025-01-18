@@ -33,10 +33,12 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .video-container {
   text-align: center;
   margin-top: 20px;
@@ -76,11 +78,9 @@ p {
   color: #444;
   margin-top: 10px;
 }
-.sidebar{
-  width: 160px;
-}
-.sidebar-image{
+
+.sidebar-image {
   width: 120px;
-    border-radius: 10px;
-    margin-bottom: 8px;
+  border-radius: 10px;
+  margin-bottom: 8px;
 }

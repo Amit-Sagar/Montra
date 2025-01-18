@@ -60,7 +60,10 @@ const VideoSection = () => {
   };
 
   return (
-    <div style={{ padding: "35px 80px", background: "rgb(0 88 255 / 91%)" }}>
+    <div
+      className=""
+      style={{ padding: "35px 80px", background: "rgb(0 88 255 / 91%)" }}
+    >
       {/* <h1>Interactive Video Player</h1> */}
 
       {/* Upload Video Input */}
@@ -118,19 +121,6 @@ const VideoSection = () => {
           </div>
         )}
       </div>
-      {/* <img
-        src={user_img}
-        style={{
-          width: "100px",
-          height: "100px",
-          "border-radius": "25px",
-          border: "11px solid #cbcbcb",
-          "border-collapse": "collapse",
-          position: "absolute",
-          top: "320px",
-          left: "237px",
-        }}
-      /> */}
 
       {/* Framer Timeline below the video */}
       {videoUrl && (
