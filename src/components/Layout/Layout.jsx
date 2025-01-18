@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import RightSection from "./RightSection";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, setOpenModal }) => {
   return (
     <div>
       <div className="flex justify-between  items-center py-4 border-b-2 border-[#EFEFEF]">
@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
       <div className="flex h-screen w-full">
         <Sidebar />
         {children}
-        <RightSection />
+        <RightSection setOpenModal={setOpenModal} />
       </div>
     </div>
   );

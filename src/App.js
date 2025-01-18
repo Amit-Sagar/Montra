@@ -5,6 +5,7 @@ import Modal from './components/Modal';
 import Homepage from './pages/Homepage';
 
 function App() {
+  const [openModal, setOpenModal] = useState(false)
   const [videoUrl, setVideoUrl] = useState(null); // Store the video URL
   const [fileName, setFileName] = useState(""); // Store the file name
   const fileInputRef = useRef(null); // Ref for the file input element
@@ -19,10 +20,10 @@ function App() {
     }
   };
   return (
-    <Layout>
+    <Layout setOpenModal={setOpenModal}>
       <>
         <Homepage videoUrl={videoUrl} setVideoUrl={setVideoUrl} fileName={fileName} setFileName={setFileName} fileInputRef={fileInputRef} handleVideoUpload={handleVideoUpload} />
-        <Modal handleVideoUpload={handleVideoUpload} fileInputRef={fileInputRef} />
+        {openModal && <Modal handleVideoUpload={handleVideoUpload} fileInputRef={fileInputRef} setOpenModal={setOpenModal} />}
       </>
     </Layout>
   );

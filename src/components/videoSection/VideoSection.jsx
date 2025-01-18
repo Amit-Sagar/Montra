@@ -15,10 +15,9 @@ const VideoSection = ({
   fileInputRef,
   handleVideoUpload,
 }) => {
-  const [progress, setProgress] = useState(0); // Store the playback progress
-  const videoRef = useRef(null); // Ref for the video element
+  const [progress, setProgress] = useState(0); 
+  const videoRef = useRef(null); 
 
-  // Update progress as the video plays
   const handleTimeUpdate = () => {
     const video = videoRef.current;
     setProgress((video.currentTime / video.duration) * 100);
@@ -64,7 +63,7 @@ const VideoSection = ({
       <Navbar />
       {/* Video Container */}
       <div className="border-b-2 border-[#EFEFEF]">
-        <div className="w-[80%] h-[400px] border border-black relative overflow-hidden mx-auto">
+        <div className="w-[80%] h-[400px] relative overflow-hidden mx-auto">
           {videoUrl ? (
             <div
               style={{ width: "100%", height: "100%", position: "relative" }}

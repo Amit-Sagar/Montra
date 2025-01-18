@@ -2,11 +2,20 @@ import React from "react";
 import FileInput from "./common/FileInput";
 import img1 from "../assets/images/modalImg.png";
 import img2 from "../assets/images/ModalImg2.png";
+import closeIcon from "../assets/icons/Generalclose.svg";
 
-const Modal = ({ fileInputRef, handleVideoUpload }) => {
+const Modal = ({ fileInputRef, handleVideoUpload, setOpenModal }) => {
   return (
     <div className="border-l-2 border-[#EFEFEF] max-w-[320px]">
-      <h1 className="border-b-2 border-[#EFEFEF] py-2 px-5">Media</h1>
+      <div className="border-b-2 border-[#EFEFEF] py-2 px-5 flex justify-between items-center">
+        <h1>Media</h1>
+        <img
+          className="cursor-pointer"
+          src={closeIcon}
+          alt="/"
+          onClick={() => setOpenModal(false)}
+        />
+      </div>
       <div className="px-5">
         <p className="text-[#707070] text-xs">Upload Media</p>
         <FileInput inputRef={fileInputRef} onChange={handleVideoUpload} />
