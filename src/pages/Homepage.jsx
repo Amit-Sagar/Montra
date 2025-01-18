@@ -1,7 +1,7 @@
 import React from "react";
-import Sidebar from "../components/Layout/Sidebar";
+// import Sidebar from "../components/Layout/Sidebar";
 import VideoSection from "../components/videoSection/VideoSection";
-import RightSection from "../components/Layout/RightSection";
+// import RightSection from "../components/Layout/RightSection";
 
 const Homepage = ({
   videoUrl,

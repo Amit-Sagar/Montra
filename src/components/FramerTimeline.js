@@ -25,7 +25,7 @@ const FramerTimeline = ({
       : "00:00"; // Fallback time when videoDuration is invalid
 
   return (
-    <div style={{ width: "600px", marginTop: "20px" }}>
+    <div style={{ width: "870px", marginTop: "20px" }}>
       {/* Time Display */}
       <div
         style={{
@@ -52,7 +52,7 @@ const FramerTimeline = ({
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            width:"144%"
+            // width:"144%"
           }}
         >
           <motion.div
@@ -65,7 +65,15 @@ const FramerTimeline = ({
             animate={{ width: `${progress}%` }}
           />
         </div>
-
+<div style={{
+  // "width":"144%",
+    "background": "#f1f1f1",
+    "margin-bottom": "9px",}}>
+<button style={{background:"#A6F0FC",color:"#06AED4",borderRadius:"5px",padding:"8px 40px",position:"relative",left:"58%"}}>
+      <i class="fa fa-search-plus" aria-hidden="true" style={{"background": "white",
+    "padding": "5px",
+   " borderRadius": "6px"}}></i> Zoom 2s</button>
+</div>
         {/* Track 2 (Vector Image 2 - Pink) */}
         <div
           style={{
@@ -74,7 +82,7 @@ const FramerTimeline = ({
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            width:"144%"
+            // width:"144%"
           }}
         >
           <motion.div
@@ -91,21 +99,21 @@ const FramerTimeline = ({
         {/* Draggable Slider Marker */}
         <motion.div
           drag="x"
-          dragConstraints={{ left: 0, right: 600 }}
+          dragConstraints={{ left: 0, right: 870 }}
           style={{
             position: "absolute",
             top: "0",
             left: `${progress}%`,
-            width: "15px",
-            height: "38px",
+            width: "3px",
+            height: "132px",
             background: "blue", // Ensure slider is always visible
-            borderRadius: "50%",
+            // borderRadius: "50%",
             cursor: "grab",
             transform: "translate(-50%, -5px)", // Keep slider centered on progress
           }}
           onDrag={(event, info) => {
             const newProgress = Math.min(
-              Math.max((info.point.x / 600) * 100, 0),
+              Math.max((info.point.x / 870) * 100, 0),
               100
             );
             onSeek((newProgress / 100) * videoDuration);
