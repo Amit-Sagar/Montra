@@ -83,4 +83,13 @@ p {
   width: 120px;
   border-radius: 10px;
   margin-bottom: 8px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+i{
+  background-color: white;
+  border: black;
+}
+.flex{
+  display: flex;
 }

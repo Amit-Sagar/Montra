@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import FramerTimeline from "../FramerTimeline"; // Assuming this is your FramerTimeline component
+import Navbar from "./Navbar";
 
 const VideoSection = () => {
   const [videoUrl, setVideoUrl] = useState(null); // Store the video URL
@@ -60,10 +61,8 @@ const VideoSection = () => {
   };
 
   return (
-    <div
-      className=""
-      style={{ padding: "35px 80px", background: "rgb(0 88 255 / 91%)" }}
-    >
+    <div>
+      <Navbar/>
       {/* <h1>Interactive Video Player</h1> */}
 
       {/* Upload Video Input */}
@@ -122,6 +121,39 @@ const VideoSection = () => {
         )}
       </div>
 
+{/* Controls (outside video div) */}
+<div style={{ marginBottom: "20px",display:"flex" }}>
+        
+<div style={{width:"65%",display:"flex",justifyContent:"end"}}>
+        {/* Skip Backward by 10 Seconds */}
+        <button onClick={skipBackward} style={{ marginRight: "10px",border:"none", background:"white" }}>
+        <i class="fa fa-step-backward" aria-hidden="true"></i>
+        </button>
+{/* Play/Pause Button */}
+
+<button onClick={togglePlayPause} style={{ marginRight: "10px",border:"none", background:"white" }}>
+          {videoRef.current && videoRef.current.paused ? <i class="fa fa-play" aria-hidden="true"></i> : <i class="fa fa-pause" aria-hidden="true"></i>}
+        </button>
+        {/* Skip Forward by 10 Seconds */}
+        <button onClick={skipForward} style={{ marginRight: "10px",border:"none", background:"white" }}>
+        <i class="fa fa-step-forward" aria-hidden="true"></i>
+        </button>
+        </div>
+<div>
+        {/* Delete Video Button */}
+        <button onClick={deleteVideo} style={{ marginRight: "10px",border:"none", background:"white","marginRight": "10px",
+    border: "none",
+    background: "white"}}>
+        <i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
+        <button style={{ marginRight: "10px",border:"none", background:"white","marginRight": "10px",
+    border: "none",
+    background: "white"}}>
+        <i class="fa fa-scissors" aria-hidden="true"></i>
+        </button>
+        </div>
+      </div>
+
       {/* Framer Timeline below the video */}
       {videoUrl && (
         <FramerTimeline
@@ -130,28 +162,7 @@ const VideoSection = () => {
           videoDuration={videoRef.current?.duration || 60}
         />
       )}
-      {/* Controls (outside video div) */}
-      <div style={{ marginBottom: "20px" }}>
-        {/* Play/Pause Button */}
-        <button onClick={togglePlayPause} style={{ marginRight: "10px" }}>
-          {videoRef.current && videoRef.current.paused ? "Play" : "Pause"}
-        </button>
-
-        {/* Skip Backward by 10 Seconds */}
-        <button onClick={skipBackward} style={{ marginRight: "10px" }}>
-          Back 10s
-        </button>
-
-        {/* Skip Forward by 10 Seconds */}
-        <button onClick={skipForward} style={{ marginRight: "10px" }}>
-          Forward 10s
-        </button>
-
-        {/* Delete Video Button */}
-        <button onClick={deleteVideo} style={{ marginRight: "10px" }}>
-          Delete
-        </button>
-      </div>
+      
     </div>
   );
 };
